@@ -1,0 +1,32 @@
+@import './today-weather.scss';
+@import './weather-forecast.scss';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}   
+
+body {
+    height: 100%;
+    
+}
+.root {
+    height: 100%;    
+    background-color: #7bb1ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .weather-app-container {
+        background-color: #f3fbff;
+        display: flex;
+        width: 70%;
+        height: 78%;
+        border-radius: 25px;
+
+    }
+}
+
