@@ -28,6 +28,13 @@ body {
         display: flex;
         width: 70%;
         height: 78%;
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            width: 80%;
+            height: 90%;
+        }
         border-radius: 25px;
 
     }

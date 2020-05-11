@@ -1,9 +1,16 @@
 #weather-forcast {
     width: 65%;
+    
     #search {
         display: flex;
         display: flex;
         padding: 3em 3em 2em 3em;
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            padding: 2em 2em 1em 2em;
+        }
         align-items: center;
         i {
             width: 1em;
@@ -35,6 +42,12 @@
     #weather-places {
         h1 {
             padding: 0 1.5em;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                font-size: 26px;
+            }
             font-weight: 400;
             color: rgb(34, 45, 89); 
             span {
@@ -44,6 +57,12 @@
         #carrousel-places {
             width: 100%;
             height: 14em;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                height: 11em;
+            }
             display: flex;
             align-items: center;
             justify-content: center;
@@ -57,6 +76,15 @@
                 justify-content: flex-end;
                 
             }
+            p {
+                @media screen 
+                and (min-device-width: 1200px) 
+                and (max-device-width: 1600px) 
+                and (-webkit-min-device-pixel-ratio: 1) {
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
             .img-place {
                 height: 79%;
                 width: 66%;
@@ -64,18 +92,22 @@
                 border-radius: 22px;
                 background: black; 
                 margin: 0 2em;
+                
                 &:hover {
                     @keyframes bigger {
                         from {
-                            height: 75%; 
+                            height: 79%;
+                            width: 66%;
                         }
                         to {
-                            height: 90%;
+                            height: 82%;
+                            width: 70%;
                         }
                     }
                     
-                    animation: bigger .5s ease-out;
-                    height: 90%;
+                    animation: bigger .2s ease-out;
+                    height: 82%;
+                    width: 70%;
                     cursor: pointer;
                 }
             }
@@ -99,6 +131,12 @@
     }
     #time-weather {
         margin: 2em 4%;
+        @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                margin: 24px 5%;
+            }
         display: flex;
         button {
             background: none;
@@ -107,6 +145,12 @@
             font-size: 20px;
             flex-direction: column;
             margin-right: 2em;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                font-size: 15px;
+            }
             color: #d8dfeb;
             &:hover {
                 animation: ease;
@@ -116,9 +160,15 @@
                     content: "•";
                     font-size: 66px;
                     position: absolute;
-                    top: 56%;
+                    top: 54%;
                     color: #222d59;
-                    margin: 0 1%; 
+                    margin: 0 1%;
+                    @media screen 
+                    and (min-device-width: 1200px) 
+                    and (max-device-width: 1600px) 
+                    and (-webkit-min-device-pixel-ratio: 1) {
+                        top: 53%;
+                    }
 
                     
                 }
@@ -127,16 +177,52 @@
     }
     #data-container {
         margin: 2em;
+        @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                margin: 1em 2em;
+        }
         .weather-stats {
             display: flex;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                font-size: 12px;
+            }
             margin-bottom: 8px;
             justify-content: space-between;
+           
             .line {
+                display: flex;
                 width: 31%;
                 height: 8px;
                 position: inherit;
                 background: #efefef7d;
                 border-radius: 23px;
+                .right-probable {
+                    background-color: #e45015;
+                    border-radius: 0 10px 10px 0;
+                }
+                .left-probable {
+                    background-color: #d4e3f6;
+                    border-radius: 10px 0 0 10px;
+                }
+            }
+        }
+        @for $i from 1 through 7 {
+            .weather-stats:nth-child(#{$i}) {
+                .line  {
+                    .left-probable {
+                        width: random(150) + px
+                    }
+                    .right-probable {
+                        width: random(150) + px
+                    }
+                }
+                
+                
             }
         }
     }
