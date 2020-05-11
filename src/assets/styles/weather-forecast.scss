@@ -1,5 +1,8 @@
 #weather-forcast {
     width: 65%;
+    z-index: 4;
+    background: #f3fbff; 
+    border-radius: 25px 0 0 25px; 
     
     #search {
         display: flex;
@@ -40,6 +43,8 @@
         }
     }
     #weather-places {
+        z-index: 2;
+        background: #f3fbff;  
         h1 {
             padding: 0 1.5em;
             @media screen 
@@ -197,10 +202,11 @@
             .line {
                 display: flex;
                 width: 31%;
-                height: 8px;
+                height: 5px;
                 position: inherit;
                 background: #efefef7d;
                 border-radius: 23px;
+                justify-content: center;
                 .right-probable {
                     background-color: #e45015;
                     border-radius: 0 10px 10px 0;
@@ -215,10 +221,10 @@
             .weather-stats:nth-child(#{$i}) {
                 .line  {
                     .left-probable {
-                        width: random(150) + px
+                        width: random(125) + px
                     }
                     .right-probable {
-                        width: random(150) + px
+                        width: random(125) + px
                     }
                 }
                 

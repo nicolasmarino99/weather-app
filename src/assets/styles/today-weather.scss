@@ -2,4 +2,179 @@
     width: 35%;
     background: #110e3c;
     border-radius: 0 25px 25px 0;
+    .cloud-1 {
+        background-image: url(../images/cloud.svg);
+        width: 10em;
+        height: 12em;
+        background-size: cover;
+        position: relative;
+        left: 19em;
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+        top: 4em;
+    }
+    .cloud-2  {
+        background-image: url(../images/cloud.svg);
+        width: 8.2em;
+        height: 9em;
+        background-size: cover;
+        position: relative;
+        background-repeat: no-repeat;
+        top: 10em;
+        left: 72%;
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+    }
+    .cloud-3  {
+        background-image: url(../images/cloud.svg);
+        width: 14em;
+        height: 12em;
+        background-size: cover;
+        position: relative;
+        right: 6em;
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+        top: -26%;
+    }
+    #app-stats {
+        position: relative;
+        color: white;
+        z-index: 2;
+        top: -62%;
+        /* left: 14%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #profile-notifications {
+            margin-bottom: 6em;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            #btns-nots {
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+                #btns-nots-1 {
+                    margin-right: 2em;
+                }
+            }
+            .profile-img {
+                background-image: url(../images/user.svg);
+                background-size: cover;
+                width: 25px;
+                height: 25px;
+                filter: invert(1);
+
+            }
+        }
+        #date-weather {
+            margin-bottom: 3em;
+            .today {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-bottom: 1em;
+                i {
+                    align-self: auto;
+                }
+                #date {
+                    h2 {
+                        letter-spacing: 1px;
+                    }
+                    p {
+                        color: #9192a8;
+                    }
+                    
+                }
+            }
+            .grades {
+                #main-grade {
+                    display: flex;
+                    #grade {
+                        font-size: 7em;
+                        line-height: 1;
+                        margin-left: 15%;
+                    }
+                    p {
+                        
+                        left: 63%;
+                        top: 32%;
+                        font-size: 2em;
+                    }
+                }
+                #current-city {
+                    justify-content: center;
+                    margin-left: 24%;
+                    margin-bottom: 1em;
+                    color: #9192a8;
+                }
+                .suggestion {
+                    color: #9192a8;
+                    display: flex;  
+                }
+            }
+        }
+        h3 {
+            width: 100%;
+            margin-left: 18%;
+            margin-bottom: 9%;
+        }
+        #chance-of-rain {
+            width: 80%;
+            display: flex;
+            #y {
+                display: flex;
+                flex-direction: column;
+                p {
+                    margin-bottom: 2em;
+                } 
+            }
+            #x {
+                display: flex;
+                margin-left: 2em;
+                .line-x-container {
+                    width: 2px;
+                    height: 8em;
+                    margin-left: 2.3em;
+                    background-image: linear-gradient(#403f51 20%, rgba(255,255,255,0) 0%);
+                    background-position: right;
+                    background-size: 1px 8px;
+                    background-repeat: repeat-y;
+                    
+                    .line-x {
+                        height: 6em;
+                        margin-top: 2em;
+                        width: 9px;
+                        background: #302e63;
+                        border-right: 1px solid #1f1e4e;
+                        border-radius: 4px;
+                        margin-left: -2.3px;
+                    }
+                    .line-x-today {
+                        height: 6em;
+                        margin-top: 2em;
+                        width: 9px;
+                        background: #f7c500;
+                        border-right: 1px solid #816a24;
+                        border-radius: 4px;
+                        margin-left: -2.3px;
+                    }
+                    p {
+                        margin-left: -15px;
+                        font-size: 12px;
+                        margin-top: 5px;
+                    } 
+                }
+                @for $i from 1 through 6 {
+                    .line-x-container:nth-child(#{$i}) {
+                        .line-x  {
+                            height: random(9) + em
+                        }
+                        .line-x-today {
+                            height: random(9) + em
+                        } 
+                    }
+                }
+            }
+        }
+    }
 }
