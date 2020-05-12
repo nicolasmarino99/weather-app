@@ -1,3 +1,5 @@
+@import './animations.scss';
+
 #weather-forcast {
     width: 65%;
     z-index: 4;
@@ -110,7 +112,7 @@
                         }
                     }
                     
-                    animation: bigger .2s ease-out;
+                    animation: bigger .1s ease;
                     height: 82%;
                     width: 70%;
                     cursor: pointer;
@@ -217,14 +219,16 @@
                 }
             }
         }
+       
+        
         @for $i from 1 through 7 {
             .weather-stats:nth-child(#{$i}) {
                 .line  {
                     .left-probable {
-                        width: random(125) + px
+                       @include insertBarHorizontal(125);                        
                     }
                     .right-probable {
-                        width: random(125) + px
+                        @include insertBarHorizontal(125);
                     }
                 }
                 
