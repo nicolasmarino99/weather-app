@@ -1,4 +1,4 @@
-export const weatherAppView = () => {
+export const weatherAppView = (cityWeather) => {
     let weatherAppHTML = `
     <div class="weather-app-container">
             <div id="weather-forcast">
@@ -16,7 +16,7 @@ export const weatherAppView = () => {
                     <h1>Weather <span> Forecast</span></h1>
                     <div id="carrousel-places">
                         <div class="weather-img-cont">
-                            <div class="img-place"></div>
+                            <div class="img-place" id="img-1"></div>
                             <p>Germany, Berlin</p>
                         </div>
                         <div class="weather-img-cont">
@@ -44,7 +44,7 @@ export const weatherAppView = () => {
                 <div id="data-container">
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -55,7 +55,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -66,7 +66,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -77,7 +77,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -88,7 +88,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -99,7 +99,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -110,7 +110,7 @@ export const weatherAppView = () => {
                    </div>
                    <div class="weather-stats">
                        <div>sunday</div>
-                       <div>54%</div>
+                       <div class="humidity"><i></i><p>54%</p></div>
                        <div>O</div>
                        <div>23 C°</div>
                        <div class="line">
@@ -145,12 +145,12 @@ export const weatherAppView = () => {
                         </div>
                         <div class="grades">
                             <div id="main-grade">
-                                <p id="grade">28</p>
+                                <p id="grade">${Math.floor(cityWeather.list[0].main.temp)}</p>
                                 <p>°C</p>
                             </div>
-                            <div id="current-city">Berlin,Germany</div>
+                            <div id="current-city">${cityWeather.city.name}, ${cityWeather.city.country}</div>
                             <div class="suggestion">
-                                <p>Feels like 32</p>
+                                <p>Feels like ${Math.floor(cityWeather.list[0].main.feels_like)}</p>
                                 <p>•</p>
                                 <p>Sunset 20:15</p>
                             </div>

@@ -95,9 +95,9 @@
             .img-place {
                 height: 79%;
                 width: 66%;
-                border: 1px solid black;
+                //border: 2px solid #110e3c;
                 border-radius: 22px;
-                background: black; 
+                background-size: cover;
                 margin: 0 2em;
                 
                 &:hover {
@@ -200,7 +200,17 @@
             }
             margin-bottom: 8px;
             justify-content: space-between;
-           
+            .humidity {
+                display: flex;
+                align-items: center;
+                i {
+                    background-image: url(../images/wet.svg);
+                    background-size: cover;
+                    margin-right: 6px;
+                    width: 1em;
+                    height: 13px;
+                }
+            }
             .line {
                 display: flex;
                 width: 31%;
