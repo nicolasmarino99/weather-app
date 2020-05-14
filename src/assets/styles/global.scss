@@ -24,6 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    @import './form.scss';
     .weather-app-container {
         background-color: #f3fbff;
         display: flex;
@@ -39,5 +40,9 @@ body {
         border-radius: 25px;
 
     }
+    
+}
+.hidden {
+    visibility: hidden;
 }
 

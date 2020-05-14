@@ -1,0 +1,36 @@
+.black-bg {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #00000075;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .add-city-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3em 1em;
+        background-color: #e9967aad;
+        border-radius: 13px;
+        h4 {
+            margin-bottom: 2em;
+        }
+        .your-cities {
+            width: 31em;
+            height: 9em;
+            background-color: #ffffff75;
+        }
+        input {
+            margin-top: 1em;
+            width: 100%;
+            height: 4em;
+            text-align: center;
+            border: none;
+            background: antiquewhite;
+            font-size: 13px; 
+        }
+    }
+
+}
