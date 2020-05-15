@@ -1,3 +1,7 @@
+import { todayWeather } from '../views/components/todayWeather'
+
+
+
 const searchPhoto = async (keyWord) => {
     try {
         
@@ -15,7 +19,7 @@ const searchPhoto = async (keyWord) => {
     }
 }
 
-const getWeather = async (cityName,unit) => {
+const getWeather = async (cityName,unit,container) => {
     
    try {
       
@@ -24,9 +28,10 @@ const getWeather = async (cityName,unit) => {
         
         const result = await fetch(url)
         const weatherData = await result.json()
-
+        todayWeather(weatherData)
         console.log(weatherData)
         searchPhoto(cityName)
+        container.insertAdjacentHTML("beforeend",todayWeather(weatherData))
     } catch(error) {
         alert(error)
     }
