@@ -2,7 +2,25 @@ import { todayWeather } from '../views/components/todayWeather'
 import { weatherStats } from '../views/components/weatherStats'
 import { weatherPlaces } from '../views/components/weatherPlaces'
 
+const insertHTMLWeatherInfo = (weatherData,container) => {
 
+    const weatherForecast = container.firstChild.nextElementSibling
+    const todayWeatherHTML = container.querySelector('#today-weather')
+    const dataContHTML = weatherForecast.querySelector('#data-container')
+    if (todayWeatherHTML && dataContHTML) {
+        todayWeatherHTML.remove()
+        dataContHTML.previousElementSibling.remove()
+        dataContHTML.remove()
+    } 
+
+
+    weatherForecast.insertAdjacentHTML("beforeend",weatherStats(weatherData))
+    container.insertAdjacentHTML("beforeend",todayWeather(weatherData))
+    
+    const weatherPlacesContainer = weatherForecast.querySelector('#carrousel-places')
+    weatherPlacesContainer.insertAdjacentHTML("afterbegin",weatherPlaces(weatherData))
+
+}
 
 const searchPhoto = async (keyWord) => {
     try {
@@ -27,18 +45,15 @@ const getWeather = async (cityName,unit,container) => {
       
         const apiKey = '2bbd8cfc68b9d95c36a82ea2b731e3d3'
         let url = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${unit}`
-        
         const result = await fetch(url)
         const weatherData = await result.json()
+
         todayWeather(weatherData)
         console.log(weatherData)
+
+
+        insertHTMLWeatherInfo(weatherData,container)
         
-        const weatherForecast = container.firstChild.nextElementSibling
-        weatherForecast.insertAdjacentHTML("beforeend",weatherStats(weatherData))
-        container.insertAdjacentHTML("beforeend",todayWeather(weatherData))
-        const weatherPlacesContainer = weatherForecast.querySelector('#carrousel-places')
-        console.log(weatherPlacesContainer)
-        weatherPlacesContainer.insertAdjacentHTML("afterbegin",weatherPlaces(weatherData))
         
         searchPhoto(cityName)
         //console.log(weatherStats(weatherData))

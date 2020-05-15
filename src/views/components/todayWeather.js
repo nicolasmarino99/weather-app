@@ -1,4 +1,35 @@
 export const todayWeather = (cityWeather) => {
+    let constString1 = ""
+    let constString2 = ""
+
+
+    const months = {
+        0: 'Jan',
+        1: 'Feb',
+        2: 'Mar',
+        3: 'Apr',
+        4: 'May',
+        5: 'Jun',
+        6: 'Jul',
+        7: 'Aug',
+        8: 'Sep',
+        9: 'Oct',
+        10: 'Nov',
+        11: 'Dec'
+    }
+
+    const days = {
+        1:  'Mon',
+        2:  'Tue',
+        3:  'Wed',
+        4:  'Thu',
+        5:  'Fri',
+        6:  'Sat',
+        0:  'Sun'
+    }
+
+
+
     const lineXContainer = () => {
         let constString= `<div class="line-x-container">
             <div class="line-x">
@@ -12,8 +43,10 @@ export const todayWeather = (cityWeather) => {
             </div>
             <p>10AM</p>
         </div>`    
-        for (let i = 0; i != 2; i++) { constString += constString }
-        return constString + specialString
+        for (let i = 0; i != 2; i++) { 
+            constString1 += constString
+            constString2 += constString }
+        return constString1 + specialString + constString2
     }
 
 
@@ -37,7 +70,7 @@ export const todayWeather = (cityWeather) => {
                         <img src="http://openweathermap.org/img/wn/${cityWeather.list[0].weather[0].icon}@2x.png" alt="">
                         <div id="date">
                             <h2>Today</h2>
-                            <p>Sat, 3 Aug</p>
+                            <p>${days[new Date(cityWeather.list[0].dt_txt).getDay()]} , ${new Date(cityWeather.list[0].dt_txt).getDate()} ${months[new Date(cityWeather.list[0].dt_txt).getMonth()]}</p>
                         </div>
                     </div>
                     <div class="grades">
