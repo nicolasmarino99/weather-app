@@ -31,7 +31,6 @@ export const weatherStats = (cityWeather) => {
                                 <div>${cityWeather.list[iterator].main.temp_max}</div>
                           </div>` }
         for (j=0; j != 7; j++) {weekWeatherStats += weatherStatsInfo(j)} 
-        //console.log(weekWeatherStats)
         const dataContainer = `${weatherMenu}<div id="data-container">${weekWeatherStats}</div>`
         return dataContainer
 }

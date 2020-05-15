@@ -49,14 +49,14 @@ const getWeather = async (cityName,unit,container) => {
         const weatherData = await result.json()
 
         todayWeather(weatherData)
-        console.log(weatherData)
+       
 
 
         insertHTMLWeatherInfo(weatherData,container)
         
         
         searchPhoto(cityName)
-        //console.log(weatherStats(weatherData))
+        
     } catch(error) {
         alert('Please Type a correct city Name')
     }

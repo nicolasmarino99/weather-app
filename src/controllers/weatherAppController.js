@@ -19,6 +19,7 @@ const insertCityWeather = async () => {
     
 }
 
+
 insertCityWeather()
 
 
