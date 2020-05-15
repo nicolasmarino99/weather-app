@@ -1,57 +1,58 @@
+// eslint-disable-next-line import/prefer-default-export
 export const todayWeather = (cityWeather) => {
-    let constString1 = ""
-    let constString2 = ""
+  let constString1 = '';
+  let constString2 = '';
 
 
-    const months = {
-        0: 'Jan',
-        1: 'Feb',
-        2: 'Mar',
-        3: 'Apr',
-        4: 'May',
-        5: 'Jun',
-        6: 'Jul',
-        7: 'Aug',
-        8: 'Sep',
-        9: 'Oct',
-        10: 'Nov',
-        11: 'Dec'
-    }
+  const months = {
+    0: 'Jan',
+    1: 'Feb',
+    2: 'Mar',
+    3: 'Apr',
+    4: 'May',
+    5: 'Jun',
+    6: 'Jul',
+    7: 'Aug',
+    8: 'Sep',
+    9: 'Oct',
+    10: 'Nov',
+    11: 'Dec',
+  };
 
-    const days = {
-        1:  'Mon',
-        2:  'Tue',
-        3:  'Wed',
-        4:  'Thu',
-        5:  'Fri',
-        6:  'Sat',
-        0:  'Sun'
-    }
+  const days = {
+    1: 'Mon',
+    2: 'Tue',
+    3: 'Wed',
+    4: 'Thu',
+    5: 'Fri',
+    6: 'Sat',
+    0: 'Sun',
+  };
 
 
-
-    const lineXContainer = () => {
-        let constString= `<div class="line-x-container">
+  const lineXContainer = () => {
+    const constString = `<div class="line-x-container">
             <div class="line-x">
                 <div class="line-x-chance"></div>
             </div>
             <p>10AM</p>
-        </div>`
-        let specialString= `<div class="line-x-container">
+        </div>`;
+    const specialString = `<div class="line-x-container">
             <div class="line-x">
                 <div class="line-x-chance line-x-today"></div>
             </div>
             <p>10AM</p>
-        </div>`    
-        for (let i = 0; i != 2; i++) { 
-            constString1 += constString
-            constString2 += constString }
-        return constString1 + specialString + constString2
+        </div>`;
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i !== 2; i++) {
+      constString1 += constString;
+      constString2 += constString;
     }
+    return constString1 + specialString + constString2;
+  };
 
 
-    
-    const todayWeatherHTML = ` <div id="today-weather">
+  const todayWeatherHTML = ` <div id="today-weather">
             <div class="cloud-1"></div>
             <div class="cloud-2"></div>
             <div class="cloud-3"></div>
@@ -99,9 +100,8 @@ export const todayWeather = (cityWeather) => {
                     </div>
                 </div>
             </div>    
-            </div>`
+            </div>`;
 
 
-    return todayWeatherHTML
-
-}
+  return todayWeatherHTML;
+};

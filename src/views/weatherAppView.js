@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/prefer-default-export
 export const weatherAppView = () => {
-    let weatherAppHTML = `
+  const weatherAppHTML = `
         <div class="weather-app-container">
             <div id="weather-forcast">
                 <div id="search">
@@ -29,6 +30,6 @@ export const weatherAppView = () => {
            
         </div>
         
-        `
-    return weatherAppHTML
-}
+        `;
+  return weatherAppHTML;
+};
