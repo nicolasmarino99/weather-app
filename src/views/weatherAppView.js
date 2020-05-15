@@ -25,11 +25,7 @@ export const weatherAppView = () => {
                 </div>
                 
 
-                <div id="data-container">
-                  
-                     
-                </div>
-            </div>
+                
            
         </div>
         

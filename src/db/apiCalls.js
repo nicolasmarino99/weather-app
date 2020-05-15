@@ -1,4 +1,6 @@
 import { todayWeather } from '../views/components/todayWeather'
+import { weatherStats } from '../views/components/weatherStats'
+import { weatherPlaces } from '../views/components/weatherPlaces'
 
 
 
@@ -11,8 +13,8 @@ const searchPhoto = async (keyWord) => {
         const photo = data2.results[0].urls.thumb
         
         const img1 = document.body.querySelector('#img-1')
-        //img1.style.background = `url(${photo})`;
-        //img1.style.backgroundSize = "cover";
+        img1.style.background = `url(${photo})`;
+        img1.style.backgroundSize = "cover";
 
     } catch(error) {
         alert(error)
@@ -30,10 +32,18 @@ const getWeather = async (cityName,unit,container) => {
         const weatherData = await result.json()
         todayWeather(weatherData)
         console.log(weatherData)
-        searchPhoto(cityName)
+        
+        const weatherForecast = container.firstChild.nextElementSibling
+        weatherForecast.insertAdjacentHTML("beforeend",weatherStats(weatherData))
         container.insertAdjacentHTML("beforeend",todayWeather(weatherData))
+        const weatherPlacesContainer = weatherForecast.querySelector('#carrousel-places')
+        console.log(weatherPlacesContainer)
+        weatherPlacesContainer.insertAdjacentHTML("afterbegin",weatherPlaces(weatherData))
+        
+        searchPhoto(cityName)
+        //console.log(weatherStats(weatherData))
     } catch(error) {
-        alert(error)
+        alert('Please Type a correct city Name')
     }
 }
 

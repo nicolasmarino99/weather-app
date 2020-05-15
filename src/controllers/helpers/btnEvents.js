@@ -1,3 +1,4 @@
+import { getWeather } from '../../db/apiCalls'
 const root = document.querySelector('.root')
 
 export let currentValue = {}
@@ -11,16 +12,22 @@ const setCloseFormEvent = (mathedcElements,behindElement) => {
     });
 };
 
-export const popItem = (actionBtn,targetItem,exitTarget,itemToPop,) => {
+export const popItemToRetrieveData = (actionBtn,targetItem,exitTarget,itemToPop,) => {
     actionBtn.addEventListener('click',() => {
     root.insertAdjacentHTML("afterbegin", itemToPop)
     setCloseFormEvent(`${targetItem}, ${targetItem} *`,exitTarget);
     root.querySelector(targetItem).addEventListener('keypress',(e)=> {
         if (e.key === 'Enter') {
-            
-            currentValue.query =  document.querySelector('#query').value
-            console.log(currentValue.query)
-            root.querySelector(targetItem).innerHTML = ""
+           
+          // Retrieve Data
+          currentValue.query =  document.querySelector('#query').value
+          
+
+          const weatherAppContainer = document.querySelector('.weather-app-container')
+          
+          getWeather(currentValue.query,'metric',weatherAppContainer)
+          
+          root.removeChild(root.querySelector(exitTarget))
         }
     })
     
