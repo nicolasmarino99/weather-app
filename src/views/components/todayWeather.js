@@ -3,7 +3,6 @@ export const todayWeather = (cityWeather) => {
   let constString1 = '';
   let constString2 = '';
 
-
   const months = {
     0: 'Jan',
     1: 'Feb',
@@ -60,7 +59,7 @@ export const todayWeather = (cityWeather) => {
                 <div id="profile-notifications">
                     <div id="btns-nots">
                         <a id="btns-nots-1" href="#">Notifications</a>
-                        <a href="#" id="toggle-temp">F°</a> 
+                        <a href="#" id="toggle-temp" >F</a> 
                     </div>
                     <div>
                         <div class="profile-img"></div>
@@ -77,11 +76,11 @@ export const todayWeather = (cityWeather) => {
                     <div class="grades">
                         <div id="main-grade">
                             <p id="grade">${Math.floor(cityWeather.list[0].main.temp)}</p>
-                            <p>°C</p>
+                            <p id="grade-not">°C</p>
                         </div>
                         <div id="current-city">${cityWeather.city.name}, ${cityWeather.city.country}</div>
                         <div class="suggestion">
-                            <p>Feels like ${Math.floor(cityWeather.list[0].main.feels_like)}</p>
+                            <p>Feels like <span id="feels-like">${Math.floor(cityWeather.list[0].main.feels_like)}</span></p>
                             <p>•</p>
                             <p>Sunset 20:15</p>
                         </div>

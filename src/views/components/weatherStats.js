@@ -23,12 +23,12 @@ export const weatherStats = (cityWeather) => {
                                 <div>${days[new Date(cityWeather.list[iterator].dt_txt).getDay()]} ${new Date(cityWeather.list[iterator].dt_txt).getHours()}:00</div>
                                 <div class="humidity"><i></i><p>${cityWeather.list[iterator].main.humidity}%</p></div>
                                 <div><img src="http://openweathermap.org/img/wn/${cityWeather.list[0].weather[0].icon}@2x.png"></div>
-                                <div>${cityWeather.list[iterator].main.temp_min}</div>
+                                <div class="temp-min">${cityWeather.list[iterator].main.temp_min}</div>
                                 <div class="line">
                                     <div class="left-probable"></div>
                                     <div class="right-probable"></div>
                                 </div>
-                                <div>${cityWeather.list[iterator].main.temp_max}</div>
+                                <div class="temp-max">${cityWeather.list[iterator].main.temp_max}</div>
                           </div>`;
   // eslint-disable-next-line no-plusplus
   for (j = 0; j !== 7; j++) { weekWeatherStats += weatherStatsInfo(j); }

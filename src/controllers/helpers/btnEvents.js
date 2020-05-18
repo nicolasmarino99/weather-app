@@ -20,7 +20,6 @@ export const popItemToRetrieveData = (actionBtn, targetItem, exitTarget, itemToP
     setCloseFormEvent(`${targetItem}, ${targetItem} *`, exitTarget);
     root.querySelector(targetItem).addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        // Retrieve Data
         currentValue.query = document.querySelector('#query').value;
 
 
