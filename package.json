@@ -1,0 +1,43 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather app with api calls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styleModules": "npm install --save-dev image-webpack-loader css-loader favicons-webpack-plugin file-loader html-webpack-plugin sass sass-loader style-loader webpack-dev-server webpack-watched-glob-entries-plugin",
+    "dev": "webpack webpack-dev-server --mode development --watch --open",
+    "installAll": "npm run styleModules && npx webpack --config webpack.config.js",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasmarino99/weather-app.git"
+  },
+  "author": "Nicolas Mariño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolasmarino99/weather-app/issues"
+  },
+  "homepage": "https://github.com/nicolasmarino99/weather-app#readme",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "favicons-webpack-plugin": "^3.0.1",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-watched-glob-entries-plugin": "^2.1.5"
+  },
+  "dependencies": {
+    "image-webpack-loader": "^6.0.0"
+  }
+}

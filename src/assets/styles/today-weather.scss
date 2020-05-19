@@ -1,0 +1,325 @@
+@import './animations.scss';
+
+#today-weather {
+    width: 35%;
+    background: #110e3c;
+    border-radius: 0 25px 25px 0;
+    .cloud-1 {
+        background-image: url(../images/cloud.svg);
+        width: 10em;
+        height: 12em;
+        background-size: cover;
+        position: relative;
+        left: 19em;
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+        top: 4em;
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            left: 13.5em;
+            top: 4em;
+        }
+    }
+    .cloud-2  {
+        background-image: url(../images/cloud.svg);
+        width: 8.2em;
+        height: 9em;
+        background-size: cover;
+        position: relative;
+        background-repeat: no-repeat;
+        top: 10em;
+        left: 72%;
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            top: 10em;
+            left: 65%;
+        }
+    }
+    .cloud-3  {
+        background-image: url(../images/cloud.svg);
+        width: 14em;
+        height: 12em;
+        background-size: cover;
+        position: relative;
+        
+        filter: invert(10%) sepia(18%) saturate(4705%) hue-rotate(218deg) brightness(100%) contrast(96%);
+        top: -26%;
+        right: 6em;
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            top: -26%;
+            right: 6em;
+        }
+        
+    }
+    #app-stats {
+        position: relative;
+        color: white;
+        z-index: 2;
+        top: -62%;
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+            top: -83%;
+            
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #profile-notifications {
+            margin-bottom: 5em;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                margin-bottom: 2em;
+            }
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            #btns-nots {
+                a {
+                    text-decoration: none;
+                    color: white;
+                    @include hoverText(rgb(226, 229, 229),rgb(77, 189, 176))
+                }
+                #btns-nots-1 {
+                    margin-right: 2em;
+                }
+            }
+            .profile-img {
+                background-image: url(../images/user.svg);
+                background-size: cover;
+                width: 25px;
+                height: 25px;
+                filter: invert(1);
+
+            }
+        }
+        #date-weather {
+            margin-bottom: 3em;
+            .today {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-bottom: 1em;
+                i {
+                    align-self: auto;
+                }
+                #date {
+                    h2 {
+                        letter-spacing: 1px;
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            font-size: 22px;
+                        }
+                        
+                    }
+                    p {
+                        color: #9192a8;
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            font-size: 12px;
+                        }
+                    }
+                    
+                }
+            }
+            .grades {
+                #main-grade {
+                    display: flex;
+                    #grade {
+                        font-size: 7em;
+                        line-height: 1;
+                        margin-left: 15%;
+                        font-weight: 300;
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            font-size: 5.5em;
+                        }
+                    }
+                    p {
+                        
+                        left: 63%;
+                        top: 32%;
+                        font-size: 2em;
+                    }
+                }
+                #current-city {
+                    justify-content: center;
+                    margin-left: 24%;
+                    margin-bottom: 1em;
+                    color: #9192a8;
+                    @media screen 
+                    and (min-device-width: 1200px) 
+                    and (max-device-width: 1600px) 
+                    and (-webkit-min-device-pixel-ratio: 1) {
+                        font-size: 14px;
+                    }
+                }
+                .suggestion {
+                    color: #9192a8;
+                    display: flex; 
+                    margin-bottom: 1em; 
+                    @media screen 
+                    and (min-device-width: 1200px) 
+                    and (max-device-width: 1600px) 
+                    and (-webkit-min-device-pixel-ratio: 1) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        h3 {
+            width: 100%;
+            margin-left: 18%;
+            margin-bottom: 9%;
+            @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                margin-bottom: 15.5%;
+                margin-top: -7%;
+
+            }
+        }
+        #chance-of-rain {
+            width: 80%;
+            display: flex;
+            #y {
+                display: flex;
+                flex-direction: column;
+                @media screen 
+                and (min-device-width: 1200px) 
+                and (max-device-width: 1600px) 
+                and (-webkit-min-device-pixel-ratio: 1) {
+                    font-size: 13px;
+                    position: relative;
+                    bottom: 2em;
+                    margin-right: 14px;
+                }
+                p {
+                    margin-bottom: 1.2em;
+                } 
+            }
+            #x {
+                display: flex;
+                margin-left: 2em;
+                @media screen 
+                and (min-device-width: 1200px) 
+                and (max-device-width: 1600px) 
+                and (-webkit-min-device-pixel-ratio: 1) {
+                    margin-left: -1em;
+                    position: relative;
+                    bottom: 2em;
+                }
+                .line-x-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-right: .5em;
+                    p {
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            font-size: 11px;
+                            position: relative;
+                            margin-top: 5px;
+                            left: 5px;
+                        } 
+                    }
+                    .line-x {
+                        width: 14px;
+                        height: 8em;  
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            height: 7em;
+                        }                       
+                        background-image: linear-gradient(#403f51 20%, rgba(255, 255, 255, 0) 0%);
+                        background-position: right;
+                        background-size: 1px 8px;
+                        background-repeat: repeat-y;
+                        display: flex;
+                        align-items: flex-end;
+                        
+                        
+                        .line-x-chance {
+                            
+                            width: 10px;
+                            background: #302e63;
+                            border-right: 1px solid #1f1e4e;
+                            border-radius: 4px;
+                            position: relative;
+                            left: 9px;
+                        }
+                        .line-x-today {
+                            
+                            margin-top: 2em;
+                            width: 9px;
+                            background: #f7c500;
+                            border-right: 1px solid #816a24;
+                            border-radius: 4px;
+                            
+                        }
+                        p {
+                            margin-left: -15px;
+                            font-size: 12px;
+                            margin-top: 5px;
+                        } 
+                    }
+                }
+                @mixin insertBarVertical($pxsize) {
+                    $height-x: random($pxsize) + px;
+                    @keyframes grow-y {
+                        0% {
+                            height: 10px;
+                        }
+                        100% {
+                            height : 1
+                        }
+                    }
+                    .line-x-chance {
+                        animation: grow-y 2s ease;
+                        height: $height-x
+                    }
+                    .line-x-today {
+                        animation: grow-y 2s ease;
+                        height: $height-x
+                    } 
+                }
+                @for $i from 1 through 6 {
+                    .line-x-container:nth-child(#{$i}) {
+                        .line-x {
+                           @include insertBarVertical(140);
+                        }
+                        @media screen 
+                        and (min-device-width: 1200px) 
+                        and (max-device-width: 1600px) 
+                        and (-webkit-min-device-pixel-ratio: 1) {
+                            .line-x {
+                                @include insertBarVertical(100);
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

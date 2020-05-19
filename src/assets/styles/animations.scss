@@ -1,0 +1,61 @@
+@mixin insertBarVertical($pxsize) {
+    $height-x: random($pxsize) + px;
+    @keyframes grow-y {
+        0% {
+            height: 10px;
+        }
+        100% {
+            height : 1
+        }
+    }
+    .line-x-chance {
+        animation: grow-y 2s ease;
+        height: $height-x
+    }
+    .line-x-today {
+        animation: grow-y 2s ease;
+        height: $height-x
+    } 
+}
+@mixin insertBarHorizontal($pxsize) {
+    $width-cold: random($pxsize) + px;  
+    @keyframes grow {
+        0% {
+            width: 10px;
+        }
+        100% {
+            width : 1
+        }
+    }
+    animation: grow 2s ease;
+    width : $width-cold
+}
+
+@mixin hoverText($color,$bg-color) {
+    &:hover {
+        cursor: pointer;
+        color: $color;
+        background: $bg-color;
+        border: 5px solid transparent;
+        border-radius: 40px;
+        padding: 5px 15px;
+        overflow: hidden;
+        width: 100px;
+        transition: 
+            all        .7s,
+    }
+}
+
+@mixin insertSilicing($slicingPx) {
+    @keyframes slide {
+        0% {
+            transform: translate(0,$slicingPx);
+            
+        }
+        
+        100% {
+            transform: translate(0,0);
+        }
+    }
+    animation: slide 2s ease;
+}
